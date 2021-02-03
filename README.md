@@ -70,7 +70,7 @@ $ php artisan optimize
    * (INT)(DEFAULT: 30) per_page : the number of resources to display per page for pagination.
    * (STRING)(DEFAULT: id) order_by : the column to order by which could be, for example, ID.
    * (STRING)(DEFAULT: asc) sort_by : 'asc' or 'desc'.
-   * (STRING) search : to filter the affiliaties by your desired search filter,
+   * (STRING) search : to filter the affiliaties by your desired search query.
    * (ARRAY)(DEFAULT: ['affiliate_id', 'latitude', 'longitude']) search_fields : an array containing the fields to search within when the query parameter 'search' is passed. This, for example, could be ['id'].
 * (POST) {url}/affiliates/file : this endpoint will display store a new affiliate on the system.
  * Parameters: 

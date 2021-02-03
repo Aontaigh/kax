@@ -115,12 +115,6 @@ class AffiliateController extends Controller
                 ], 422);
             }
 
-            if (isset($affiliate->name) === false || empty($affiliate->name) === true) {
-                return response()->json([
-                    'message' => 'name required on line: ' . $lineCounter
-                ], 422);
-            }
-
             if (isset($affiliate->longitude) === false || empty($affiliate->longitude) === true) {
                 return response()->json([
                     'message' => 'longitude required at line: ' . $lineCounter
@@ -152,9 +146,9 @@ class AffiliateController extends Controller
             ]);
         }
 
-        $message = 'Successfully Created Affiliate';
+        $message = 'Affiliate Successfully Created';
         if (count($validatedArray) > 0) {
-            $message = 'Successfully Created Affiliates';
+            $message = 'Affiliates Successfully Created';
         }
 
         return response()->json([
@@ -202,7 +196,7 @@ class AffiliateController extends Controller
         $affiliate->delete();
 
         return response()->json([
-            'message' => 'Successfully Deleted'
+            'message' => 'Affiliate Successfully Deleted'
         ], 200);
     }
 

@@ -13,6 +13,7 @@ class Affiliate extends Model
      */
     protected $fillable = [
         'affiliate_id',
+        'name',
         'latitude',
         'longitude'
     ];
@@ -37,8 +38,11 @@ class Affiliate extends Model
      * @param  mixed  $searchFields
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function scopeSearch($query, $search, $searchFields = ['affiliate_id', 'latitude', 'longitude'])
-    {
+    public function scopeSearch(
+        $query,
+        $search,
+        $searchFields = ['affiliate_id', 'name', 'latitude', 'longitude']
+    ) {
         if (empty($searchFields) === true) {
             $searchFields = ['affiliate_id', 'latitude', 'longitude'];
         }

@@ -33,7 +33,10 @@ class AffiliateController extends Controller
         $orderBy      = $request->input('order_by', 'id');
         $sortBy       = $request->input('sort_by', 'asc');
         $search       = $request->input('search', null);
-        $searchFields = $request->input('search_fields', ['affiliate_id', 'latitude', 'longitude']);
+        $searchFields = $request->input(
+            'search_fields',
+            ['affiliate_id', 'name', 'latitude', 'longitude']
+        );
 
         /**
          * The initial query is built here and further query builders will be
@@ -112,6 +115,12 @@ class AffiliateController extends Controller
                 ], 422);
             }
 
+            if (isset($affiliate->name) === false || empty($affiliate->name) === true) {
+                return response()->json([
+                    'message' => 'name required on line: ' . $lineCounter
+                ], 422);
+            }
+
             if (isset($affiliate->longitude) === false || empty($affiliate->longitude) === true) {
                 return response()->json([
                     'message' => 'longitude required at line: ' . $lineCounter
@@ -137,6 +146,7 @@ class AffiliateController extends Controller
         foreach ($validatedArray as $affiliate) {
             Affiliate::create([
                 'affiliate_id' => $affiliate->affiliate_id,
+                'name'         => $affiliate->name,
                 'latitude'     => $affiliate->latitude,
                 'longitude'    => $affiliate->longitude
             ]);

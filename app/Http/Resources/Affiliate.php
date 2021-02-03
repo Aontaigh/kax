@@ -17,6 +17,7 @@ class Affiliate extends JsonResource
         return [
             'id'           => $this->id,
             'affiliate_id' => $this->affiliate_id,
+            'name'         => $this->name,
             'latitude'     => $this->latitude,
             'longitude'    => $this->longitude,
             'created_at'   => $this->created_at,

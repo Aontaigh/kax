@@ -18,6 +18,8 @@ class CreateAffiliatesTable extends Migration
 
             $table->bigInteger('affiliate_id');
 
+            $table->string('name');
+
             $table->string('latitude');
             $table->string('longitude');
 

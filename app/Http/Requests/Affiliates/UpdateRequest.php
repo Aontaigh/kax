@@ -27,6 +27,7 @@ class UpdateRequest extends FormRequest
     {
         return [
             'affiliate_id' => ['sometimes', 'required', 'integer'],
+            'name'         => ['sometimes', 'required', new Varchar, 'max:255'],
             'latitude'     => ['sometimes', 'required', new Varchar, 'max:255'],
             'longitude'    => ['sometimes', 'required', new Varchar, 'max:255'],
         ];

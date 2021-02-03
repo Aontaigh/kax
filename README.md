@@ -2,8 +2,8 @@
 
 ## Environment Setup
 
-Create a .env file from the .env.sample file
-Create a local database and connect to said database using your newly created .env file
+* Create a .env file from the .env.sample file
+* Create a local database and connect to said database using your newly created .env file
 
 ## Build Setup
 

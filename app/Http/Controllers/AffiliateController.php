@@ -33,7 +33,7 @@ class AffiliateController extends Controller
         $orderBy      = $request->input('order_by', 'id');
         $sortBy       = $request->input('sort_by', 'asc');
         $search       = $request->input('search', null);
-        $searchFields = $request->input('search_fields', []);
+        $searchFields = $request->input('search_fields', ['affiliate_id', 'latitude', 'longitude']);
 
         /**
          * The initial query is built here and further query builders will be

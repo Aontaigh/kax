@@ -129,8 +129,6 @@ class AffiliateController extends Controller
             $lineCounter++;
         }
 
-        //return $validatedArray;
-
         /**
          * At this point, we know all the affiliates in our array are valid (i.e.
          * they all have the required values set) and are ready to be inserted into
@@ -212,7 +210,7 @@ class AffiliateController extends Controller
          */
         $maxDistance = $request->input('max_distance', 100);
 
-        $affiliates = Affiliate::get();
+        $affiliates = Affiliate::orderBy('id', 'asc')->get();
 
         $data = [];
 
